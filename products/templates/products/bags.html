@@ -1,0 +1,24 @@
+{% extends 'products/base.html' %}
+{% block content %}
+
+{% load static %}
+
+<h1>hi</h1>
+
+<img src=" {% static 'products/bags/Lk-Tag-Type4.png' %} " alt="company_logo" height="500" width="660">
+
+{% for bag in bags %}
+
+<div class="container">
+    <div class="row row-cols-auto">
+      <div class="col"><img src="{{ bag.image.url }}" height="360" width="360"></div>
+      <div class="col"><h2> {{ bag.title }} </h2></div>
+      <div class="col"><p> {{ bag.description }} </p></div>
+      <div class="col"><li> {{bag.id_no}} </li></div>
+    </div>
+  </div>
+
+{% endfor %}
+
+
+{% endblock %}
